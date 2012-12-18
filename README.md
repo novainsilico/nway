@@ -17,7 +17,7 @@ A [Novadiscovery](http://www.novadiscovery.com/) open-source project based on [N
   - Transforms node.js modules to browser-side code
   - [Optimize](#cache_optimisation) client side cache by generating uniq, life-cachable, bundle of minimized sources.
   - Provides a [connect.js](http://www.senchalabs.org/connect/) [middleware to apply cache information](#middleware) to HTTP responses before the static provider treats the request (may be [connect.static()](http://www.senchalabs.org/connect/static.html)).
-  - [Asynchronous code splitter module to drive client packet generation](#arequire)
+  - [Asynchronous code splitter module to drive client bundle generation](#arequire)
   - [Module substitution to browser-only module](#substitute)
   - [Script compression using uglify](#uglify)
   - [Command line utility](#cmd) and [JavaScript API](#api)
@@ -71,9 +71,9 @@ The only difference is the use of an asynchronous require method (provided by nw
 
 ---
 
-**Now, using nway, the following packets will be identified, packed and optimized.**
+**Now, using nway, the following bundles will be identified, packed and optimized.**
 
-When a spliting point is reached, nway loads asynchronously the packet that contains the required module (if not allready loaded) before returning the required module object.
+When a spliting point is reached, nway loads asynchronously the bundle that contains the required module (if not allready loaded) before returning the required module object.
 
 ![Packet resolved](http://novadiscovery.github.com/nway/nway_02.png)
 
@@ -82,9 +82,9 @@ When a spliting point is reached, nway loads asynchronously the packet that cont
 **The *module & require* point of view of the application workflow will be as follows (every behavior is configurable):**
 
   - The client loads an un-cachable bootstrap (`bootstrap.nocache.js`) that contains both the the basic loading system and the dependency map.
-  - The bootstrap automaticaly loads the main (generated) packet `E4FA2896C.js`: this is the one that contains the entry point module.
-  - The entry point is started and, as the user goes deeper and deeper in the application, the spitting points are reached thus triggering the loading of the required packets (C then D or B).
-  - The loaded packet is a javascript file identified by a hash name (e.g. `5FA13642E.js`) based on its content and the configuration used by nway to compile it: Using nway's middleware or any other static server mechanism, the packet's files are served with cache ad-vitam HTTP headers.
+  - The bootstrap automaticaly loads the main (generated) bundle `E4FA2896C.js`: this is the one that contains the entry point module.
+  - The entry point is started and, as the user goes deeper and deeper in the application, the spitting points are reached thus triggering the loading of the required bundles (C then D or B).
+  - The loaded bundle is a javascript file identified by a hash name (e.g. `5FA13642E.js`) based on its content and the configuration used by nway to compile it: Using nway's middleware or any other static server mechanism, the bundle's files are served with cache ad-vitam HTTP headers.
 
 ![Packet and splitting point workflow](http://novadiscovery.github.com/nway/nway_03.png)
 
@@ -92,7 +92,7 @@ When a spliting point is reached, nway loads asynchronously the packet that cont
 
 As the main usage of nway is to transform any nodejs module into browser compatible modules, not any transformation of your code is required to make it work with nway.
 
-Unless you need to explicitly split your application in asynchronously loaded packets, nway only rely on standard **module** concept: `module.exports` object and `require()` mechanism:
+Unless you need to explicitly split your application in asynchronously loaded bundles, nway only rely on standard **module** concept: `module.exports` object and `require()` mechanism:
 
   - *"In Node, files and modules are in one-to-one correspondence"* ([nodejs module documentation](http://nodejs.org/api/modules.html))
   - `module.exports` is a object always defined in a module. By default `module.exports` is an empty object `{}`. The value assigned to the `module.exports` object is what a module expose to those who requiring this module. `module.exports` support any kind of javascript value: object, string, number, function, date, boolean, array, etc.
@@ -208,7 +208,7 @@ The [demo/01_simple/simple.demo.js](#demo/01_simple/simple.demo.js) file do, wit
 
 ## What happens when the `index.html` file is executed?
 
-  1. The `bootstrap.nocache.js` file is loaded, it contains the AMD mechanism (require, define, script loader, ...) and the application map (index of packet files and the modules they contain).
+  1. The `bootstrap.nocache.js` file is loaded, it contains the AMD mechanism (require, define, script loader, ...) and the application map (index of bundle files and the modules they contain).
   2. When the DOM is ready, the bootstrap resolve wich file contains the main module — index.js, the entry point — (`F9C09E355E2151A2.js`) and loads it.
   3. The `F9C09E355E2151A2.js` file register the modules it contains (among which the main module).
   4. The main module is executed by the bootstrap with the appropriate scoped variables (require(), module.exports, etc.)
@@ -360,8 +360,8 @@ If you look at the `public/generated` folder, there are 4 files:
 
 This is the nway splitting effect!
 
-  - One packet contains the main module `index.js` but there is nothing else inside (except a very small nway module: the arequire function generator).
-  - The two other packets contains `foo.js` and `bar.js` and are loaded only when the application needs them.
+  - One bundle contains the main module `index.js` but there is nothing else inside (except a very small nway module: the arequire function generator).
+  - The two other bundles contains `foo.js` and `bar.js` and are loaded only when the application needs them.
 
 
 ## Asynchronously require many modules ? ###
@@ -415,8 +415,8 @@ In some cases you have no choice: for example, if you are using an external pack
 nway's cache optimisation is based on:
 
   - nway middleware. It applies http cache optimisation on nway-generated content.
-  - Generated packet-file naming. A hash-name is used based on: nway version, compilation options and packet content.
-  - A very tiny bootstrap script, never cached, that drives packet loading
+  - Generated bundle-file naming. A hash-name is used based on: nway version, compilation options and bundle content.
+  - A very tiny bootstrap script, never cached, that drives bundle loading
 
 Exemple: consider the following `public/generated` folder:
 
@@ -438,9 +438,9 @@ The first 8 chars `CDC551BB` change depending on nway's options and version numb
 **To summarize:**
 
   - The bootstrap must never be cached (or, at least, it can be a http 304 response).
-  - The packets are naturally cachable for life.
+  - The bundles are naturally cachable for life.
 
-**The nway middleware does exactly that**: it explicitly forces the http header obtain this effect (caching all generated packets but the bootstrap). But you could do the same with any http server.
+**The nway middleware does exactly that**: it explicitly forces the http header obtain this effect (caching all generated bundles by the bootstrap). But you could do the same with any http server.
 
 **Exemple with a small connect.js driven http server:**
 
@@ -561,7 +561,7 @@ Then open the demo in a navigator:
 Now, you can play with the demo application:
 
   - Click on buttons to start a part of the application
-  - In the debug output (or your browser console) you can the packets loaded by nway.
+  - In the debug output (or your browser console) you can see the bundles loaded by nway.
 
 You can do more things by using your browser javascript console (developper tool):
 
@@ -606,7 +606,7 @@ Prepends all generated files with the given string (such a copyright notice):
 
 ### --onepack ###
 
-Forces nway to bundle all the generated packets in one single packet. When you use the `--onepack` options, nway do not write anything to the disk, instead it writes the compilation result to the standard output.
+Forces nway to bundle all the generated bundles in one single bundle. When you use the `--onepack` options, nway do not write anything to the disk, instead it writes the compilation result to the standard output.
 
 This is usefull when you do not want a bootstrap file and you do not care of application splitting (to dump the script in a standalone html file for instance).
 
@@ -636,7 +636,7 @@ This is the common usage of nway. For details, please read the API documentation
       , bootstrap   : 'bootstrap.nocache.js'
 
       // Globals are used for script optimisation : those variable
-      // are scoped in each packet to reduce file size when using
+      // are scoped in each bundle to reduce file size when using
       // uglify to mangle variable names
       , globals     : 'window, document, console, require'
 
@@ -696,7 +696,7 @@ This is the common usage of nway. For details, please read the API documentation
       // as long as you not explicitly provide an alias to them.
       , alias       : {}
 
-      // Used to force re-generation of packet files when nway version
+      // Used to force re-generation of bundle files when nway version
       // has change (as the options are used to generate global uniq id)
       , version     : require('../package.json').version
 
@@ -727,7 +727,7 @@ This is the common usage of nway. For details, please read the API documentation
 
       // prewrite is a function to execute on the source before
       // write to disk : the function receive a source, and an object
-      // The object may be (instanceof) : an nway/lib/Bootstrap or a nway/lib/DepNode (packet)
+      // The object may be (instanceof) : an nway/lib/Bootstrap or a nway/lib/DepNode (bundle)
       // This function MUST always return a source
       , prewrite    : null
 
