@@ -4,11 +4,11 @@ Bundle commonjs javascript modules for the browser with cache optimisation: writ
 
 A [Novadiscovery](http://www.novadiscovery.com/) open-source project based on [NodeJS](http://nodejs.org/)
 
-[![Novadiscovery](http://novadiscovery.github.com/nway/ND_LOGO_H_150px.png)](http://www.novadiscovery.com/)
+[![Novadiscovery](http://nway.novadiscovery.com/ND_LOGO_H_150px.png)](http://www.novadiscovery.com/)
 
 ---
 
-**Github project:** https://github.com/novadiscovery/nway ● **Full documentation:** http://novadiscovery.github.com/nway
+**Github project:** https://github.com/novadiscovery/nway ● **Full documentation:** http://nway.novadiscovery.com/
 
 
 
@@ -67,7 +67,7 @@ All your *client side modules* are standard Node.js modules, like any other modu
 
 The only difference is the use of an asynchronous require method (provided by nway). This asynchronous require `arequire()` is used to identify **splitting points** in your application workfow.
 
-![Client and server side modules](http://novadiscovery.github.com/nway/nway_01.png)
+![Client and server side modules](http://nway.novadiscovery.com/nway_01.png)
 
 ---
 
@@ -75,7 +75,7 @@ The only difference is the use of an asynchronous require method (provided by nw
 
 When a spliting point is reached, nway loads asynchronously the bundle that contains the required module (if not allready loaded) before returning the required module object.
 
-![Packet resolved](http://novadiscovery.github.com/nway/nway_02.png)
+![Packet resolved](http://nway.novadiscovery.com/nway_02.png)
 
 ---
 
@@ -86,7 +86,7 @@ When a spliting point is reached, nway loads asynchronously the bundle that cont
   - The entry point is started and, as the user goes deeper and deeper in the application, the spitting points are reached thus triggering the loading of the required bundles (C then D or B).
   - The loaded bundle is a javascript file identified by a hash name (e.g. `5FA13642E.js`) based on its content and the configuration used by nway to compile it: Using nway's middleware or any other static server mechanism, the bundle's files are served with cache ad-vitam HTTP headers.
 
-![Packet and splitting point workflow](http://novadiscovery.github.com/nway/nway_03.png)
+![Packet and splitting point workflow](http://nway.novadiscovery.com/nway_03.png)
 
 ## nway just use nodejs modules mechanism ###
 
