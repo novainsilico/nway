@@ -1,0 +1,19 @@
+
+/* Main styles */
+
+body {
+	font-size: 0.80em;
+	font-family:sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+	font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.content {
+	width:       900px;
+	margin:      10px auto;
+}

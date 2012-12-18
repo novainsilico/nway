@@ -1,0 +1,27 @@
+
+/* Main styles */
+
+body {
+	font-size: 0.80em;
+	font-family:sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+	font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.content {
+	width:       900px;
+	margin:      10px auto;
+}
+
+#output {
+	border:      1px solid #ccc;
+	box-shadow:  0px 0px 10px rgba(0,0,0,.3);
+	padding:     10px;
+	height:      400px;
+	overflow:    auto;
+}
