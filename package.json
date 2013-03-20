@@ -1,6 +1,6 @@
 {
     "name": "nway"
-  , "version": "0.1.1"
+  , "version": "0.1.2"
   , "description": "Bundle commonjs javascript modules for the browser with cache optimisation: write browser-side script the node's way !"
   , "repository": "git://github.com/novadiscovery/nway"
   , "url":        "http://novadiscovery.github.com/nway"
@@ -18,7 +18,7 @@
     , "underscore":  "1.x.x"
     , "underscore.string":  "2.x.x"
     , "commander":   "0.x.x"
-    , "uglify-js":   "*"
+    , "uglify-js":   "<2.0.0"
     , "colors":      "0.x.x"
     , "crc":         "0.2.x"
     , "resolve":     "0.2.x"
