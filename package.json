@@ -18,7 +18,7 @@
     , "underscore":  "1.x.x"
     , "underscore.string":  "2.x.x"
     , "commander":   "0.x.x"
-    , "uglify-js":   "*"
+    , "uglify-js":   "<2.0.0"
     , "colors":      "0.x.x"
     , "crc":         "0.2.x"
     , "resolve":     "0.2.x"
