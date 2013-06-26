@@ -56,4 +56,7 @@
 
   , "main": "index.js"
   , "engines": { "node": ">= 0.8.x" }
+  , "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  }
 }
