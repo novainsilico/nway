@@ -1,0 +1,60 @@
+{
+  "name": "nway",
+  "version": "0.1.2",
+  "dependencies": {
+    "async": {
+      "version": "0.2.9",
+      "from": "async@0.x.x"
+    },
+    "underscore": {
+      "version": "1.4.4",
+      "from": "underscore@1.x.x"
+    },
+    "underscore.string": {
+      "version": "2.3.1",
+      "from": "underscore.string@2.x.x"
+    },
+    "commander": {
+      "version": "0.6.1",
+      "from": "commander@0.x.x"
+    },
+    "uglify-js": {
+      "version": "1.3.5",
+      "from": "uglify-js@<2.0.0"
+    },
+    "colors": {
+      "version": "0.6.0-1",
+      "from": "colors@0.x.x"
+    },
+    "crc": {
+      "version": "0.2.0",
+      "from": "crc@0.2.x"
+    },
+    "resolve": {
+      "version": "0.2.8",
+      "from": "resolve@0.2.x"
+    },
+    "mkdirp": {
+      "version": "0.3.5",
+      "from": "mkdirp@0.3.x"
+    },
+    "debug": {
+      "version": "0.7.2",
+      "from": "debug@0.7.x"
+    },
+    "minimatch": {
+      "version": "0.2.12",
+      "from": "minimatch@0.2.x",
+      "dependencies": {
+        "lru-cache": {
+          "version": "2.3.0",
+          "from": "lru-cache@2"
+        },
+        "sigmund": {
+          "version": "1.0.0",
+          "from": "sigmund@~1.0.0"
+        }
+      }
+    }
+  }
+}
