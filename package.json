@@ -2,7 +2,10 @@
     "name": "nway"
   , "version": "0.1.2"
   , "description": "Bundle commonjs javascript modules for the browser with cache optimisation: write browser-side script the node's way !"
-  , "repository": "git://github.com/novadiscovery/nway"
+  , "repository": {
+      "type": "git",
+      "url":"git://github.com/novadiscovery/nway"
+    }
   , "url":        "http://novadiscovery.github.com/nway"
   , "keywords": ["commonjs","require","adynchronous","bundle","browser","cache","optimisation"]
   , "author": "Novadiscovery <osproject@novadiscovery.com>"
