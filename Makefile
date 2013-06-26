@@ -6,6 +6,7 @@ MOCHA_OPTS        =
 REPORTER          = spec
 TEST_UNIT         = ./test/unit
 TEST_FUNCTIONAL   = ./test/functional
+COVERAGE          = ./doc/coverage.html
 
 
 # TEST
