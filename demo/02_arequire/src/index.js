@@ -1,7 +1,7 @@
 // index.js
 
 console.log('index.js: I get a arequire() function for my module');
-var arequire = require('../../../arequire.js')(require) // usualy do : require('nway/arequire')(require)
+var arequire = require('../../../lib/arequire.js')(require) // usualy do : require('nway/arequire')(require)
 
 console.log('index.js: For demo purpose, I export my application object');
 

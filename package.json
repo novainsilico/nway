@@ -1,6 +1,6 @@
 {
   "name": "nway",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Bundle commonjs javascript modules for the browser with cache optimisation: write browser-side script the node's way !",
   "repository": {
     "type": "git",
@@ -57,7 +57,7 @@
       "url": "https://github.com/novadiscovery/nway/raw/master/LICENSE"
     }
   ],
-  "main": "index.js",
+  "main": "lib/nway.js",
   "engines": {
     "node": ">= 0.8.x"
   },

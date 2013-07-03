@@ -25,7 +25,7 @@
  *
  * @novadox withcode
  */
-var nway   = require('../..');    // = require('nway')
+var nway   = require('../../lib/nway');    // = require('nway')
 
 nway({
 	index: __dirname + '/src'
