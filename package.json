@@ -57,7 +57,7 @@
       "url": "https://github.com/novadiscovery/nway/raw/master/LICENSE"
     }
   ],
-  "main": "index.js",
+  "main": "lib/nway.js",
   "engines": {
     "node": ">= 0.8.x"
   },

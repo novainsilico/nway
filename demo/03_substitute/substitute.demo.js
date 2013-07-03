@@ -37,7 +37,7 @@
  * Below, the `substitute.demo.js` source :
  * @novadox withcode
  */
-var nway   = require('../..');    // = require('nway')
+var nway   = require('../../lib/nway');    // = require('nway')
 
 nway({
 
