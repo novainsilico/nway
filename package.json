@@ -1,6 +1,6 @@
 {
   "name": "nway",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "Bundle commonjs javascript modules for the browser with cache optimisation: write browser-side script the node's way !",
   "repository": {
     "type": "git",
@@ -34,7 +34,8 @@
     "resolve": "0.2.x",
     "mkdirp": "0.3.x",
     "debug": "0.7.x",
-    "minimatch": "0.2.x"
+    "minimatch": "0.2.x",
+    "rework": "~0.17.1"
   },
   "devDependencies": {
     "should": "*",
