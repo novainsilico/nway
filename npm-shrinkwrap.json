@@ -59,7 +59,7 @@
     "rework": {
       "version": "0.17.1",
       "from": "rework@",
-      "resolved": "http://registry.npmjs.org/rework/-/rework-0.17.1.tgz",
+      "resolved": "https://registry.npmjs.org/rework/-/rework-0.17.1.tgz",
       "dependencies": {
         "css": {
           "version": "1.4.0",
@@ -78,7 +78,7 @@
         "commander": {
           "version": "1.0.4",
           "from": "commander@1.0.4",
-          "resolved": "http://registry.npmjs.org/commander/-/commander-1.0.4.tgz",
+          "resolved": "https://registry.npmjs.org/commander/-/commander-1.0.4.tgz",
           "dependencies": {
             "keypress": {
               "version": "0.1.0",
@@ -97,7 +97,7 @@
         "rework-inherit": {
           "version": "0.1.5",
           "from": "rework-inherit@0.1.5",
-          "resolved": "http://registry.npmjs.org/rework-inherit/-/rework-inherit-0.1.5.tgz"
+          "resolved": "https://registry.npmjs.org/rework-inherit/-/rework-inherit-0.1.5.tgz"
         },
         "rework-visit": {
           "version": "1.0.0",
