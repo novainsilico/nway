@@ -1,6 +1,6 @@
 {
   "name": "nway",
-  "version": "0.1.6",
+  "version": "0.3.1",
   "dependencies": {
     "async": {
       "version": "0.2.9",
