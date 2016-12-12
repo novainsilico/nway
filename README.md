@@ -1,5 +1,11 @@
 # nway
 
+**Deprecated Notice**
+
+Nway was an innovative way to bundle application from another time. Please consider [browserify](http://browserify.org/) and [webpack](https://webpack.github.io/).
+
+-- 
+
 Bundle commonjs javascript modules for the browser with cache optimisation: write browser-side script the node's way !
 
 A [Novadiscovery](http://www.novadiscovery.com/) open-source project based on [NodeJS](http://nodejs.org/)
