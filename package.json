@@ -1,6 +1,6 @@
 {
   "name": "nway",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Bundle commonjs javascript modules for the browser with cache optimisation: write browser-side script the node's way !",
   "repository": {
     "type": "git",
@@ -63,6 +63,6 @@
     "node": ">= 0.8.x"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   }
 }
